@@ -1,0 +1,42 @@
+<p>
+    <a routerLink="/admin/products/new" class="btn btn-primary">New Product</a>
+</p>
+<p>
+    <input type="text" #query class="form-control" placeholder="Search..." (keyup)="filter(query.value)">
+</p>
+
+<table class="table table-condensed table-striped" [mfData]="filteredProducts" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+        <tr>
+            <th>
+                <mfDefaultSorter by="title">Title</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="price">Price</mfDefaultSorter>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngIf="filteredProducts.length; else showLoading">
+        <tr *ngFor="let p of mf.data">
+            <td>{{p.title}}</td>
+            <td>{{p.price}}</td>
+            <td>
+                <a [routerLink]="['/admin/products',p.id]">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<ng-template #showLoading>
+    <div style="text-align: center;width: 100%;
+    display: table-cell;">
+        <img src="../../../assets/Images/lg.ajax-spinner-gif.gif" height="50" width="50">
+    </div>
+</ng-template>

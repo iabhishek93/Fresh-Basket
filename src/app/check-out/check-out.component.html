@@ -1,3 +1,43 @@
-<p>
-  check-out works!
-</p>
+<h2>Shipping</h2>
+<div class="row">
+  <div class="col-6">
+    <form #f="ngForm">
+      <div class="form-group">
+        <label for="">Name</label>
+        <input #name="ngModel" name="name" [(ngModel)]="shipping.name" type="text" placeholder="Name"
+          class="form-control" required>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+          <div *ngIf="name.errors.required">Name is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Address</label>
+        <textarea #address="ngModel" name="address" [(ngModel)]="shipping.address" type="text" class="form-control"
+          placeholder="Address" cols="20" rows="5"></textarea>
+        <div class="alert alert-danger" *ngIf="address.touched && address.invalid">
+          <div *ngIf="address.errors.required">Address is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Landmark</label>
+        <input #landmark="ngModel" name="secondAddress" [(ngModel)]="landmark.secondAddress" type="text"
+          class="form-control" placeholder="Landmark" required>
+        <div class="alert alert-danger" *ngIf="landmark.touched && landmark.invalid">
+          <div *ngIf="landmark.errors.required">Landmark is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">City</label>
+        <input #city="ngModel" name="city" [(ngModel)]="shipping.city" type="text" placeholder="City"
+          class="form-control" required>
+        <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
+          <div *ngIf="city.errors.required">City is required.</div>
+        </div>
+      </div>
+      <button [disabled]="!f.valid" (click)="placeOrder()" class="btn btn-primary">Place Order</button>
+    </form>
+  </div>
+  <div class="col-6">
+    <shopping-cart-summary [cart]="cart"></shopping-cart-summary>
+  </div>
+</div>

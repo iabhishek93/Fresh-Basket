@@ -1,1 +1,17 @@
-<h3>This is my orders page</h3>
+<h1>My Orders</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders$ | async">
+            <td>{{order.shippingInfo.name}}</td>
+            <td>{{order.datePlaced|date}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,1 +1,17 @@
-<h3>This is Admin Orders Page</h3>
+<h1>Orders</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Date of Order</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of order$ | async">
+            <td>{{order.shippingInfo.name}}</td>
+            <td>{{order.datePlaced|date}}</td>
+            <!-- <td>{{order.items.}}</td> -->
+        </tr>
+    </tbody>
+</table>

@@ -27,6 +27,7 @@
     "core-js": "^2.6.9",
     "firebase": "^6.3.0",
     "firebase-tools": "^7.1.0",
+    "font-awesome": "^4.7.0",
     "g": "^2.0.1",
     "ng-bootstrap": "^1.1.16-1",
     "ng2-validation": "^4.2.0",

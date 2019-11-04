@@ -1,0 +1,14 @@
+.btn{
+    background: #db3135;
+    margin-left: 10px;
+    color: whitesmoke;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 12px 24px;
+    width: 15%;
+    overflow: visible;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: inherit;
+    box-sizing: border-box;
+}

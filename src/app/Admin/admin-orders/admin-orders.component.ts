@@ -8,7 +8,7 @@ import { OrderService } from './../../Services/order.service';
 })
 export class AdminOrdersComponent {
   order$;
-  
+    
   constructor(private orderService: OrderService) {
     this.order$ = this.orderService.getOrders();
   }

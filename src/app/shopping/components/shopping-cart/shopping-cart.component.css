@@ -1,0 +1,10 @@
+.thumbnail{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.btn.btn-danger.btn-sm{
+    position: absolute;
+    right: 18px;
+}

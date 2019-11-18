@@ -3,12 +3,10 @@
   <!-- <div>{{cart.items | json}}</div> -->
   <p>
     You have {{cart.totalItemsCount}} items in your Shopping Cart
-    <button *ngIf="cart.items.length" 
-    (click)="clearCart()" 
-    class="btn btn-danger btn-sm">Clear Shopping Cart</button>
+    <button *ngIf="cart.items.length" (click)="clearCart()" class="btn btn-danger btn-sm">Clear Shopping Cart</button>
   </p>
-  <table class="table">
-    <thead>
+  <table class="table table-hover ">
+    <thead class="thead-dark">
       <tr>
         <th></th>
         <th>Product</th>

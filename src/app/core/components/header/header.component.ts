@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component,Input, OnInit, OnDestroy } from '@angular/core';
 import { AppUser } from 'shared/models/app-user';
 import { AuthService } from 'shared/Services/auth.service';
 import { ShoppingCartService } from 'shared/Services/shopping-cart.service';
 import { Observable } from 'rxjs';
 import { ShoppingCart } from 'shared/models/shopping-cart';
+import { CommonService } from './../../Services/common.service';
 
 @Component({
   selector: 'header',
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit {
   //shoppingCartItemCount: number;
   cart$: Observable<ShoppingCart>;
 
-  constructor(private authService: AuthService, private shoppingCartService: ShoppingCartService) {
+  constructor(private comonService:CommonService,private authService: AuthService, private shoppingCartService: ShoppingCartService) {
   }
 
   logout() {
@@ -28,15 +29,11 @@ export class HeaderComponent implements OnInit {
 
     this.cart$ = await this.shoppingCartService.getCart();
 
-    // let cart$ = await this.shoppingCartService.getCart();
-
-    // cart$.snapshotChanges()
-    //   .subscribe(cart => {
-    //     this.shoppingCartItemCount = 0;
-    //     for (let productId in cart.payload.val().items) {
-    //       this.shoppingCartItemCount += cart.payload.val().items[productId].quantity;
-    //     }
-    //   });
-
   }
+
+  open() {
+   this.comonService.openModal('1');
+  }
+
 }
+

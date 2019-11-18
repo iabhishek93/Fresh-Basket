@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderSuccessComponent implements OnInit {
 
-  constructor() { }
+imageUrl = '../../../assets/Images/happycart.png';
 
-  ngOnInit() {
-  }
+constructor() { }
+
+ngOnInit() {
+}
 
 }

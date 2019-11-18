@@ -4,9 +4,33 @@
 .fa{
     margin-right: 4px;
 }
-.navbar-brand{
+.fresh{
     margin-left: -19px;
+    color: white;
 }
-.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top{
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+
+.fa.fa-leaf{
+    color:#c1d62e
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #f8f9fa;
+}
+.fresh:hover{
+    color: white;
+}
+
+.fresh:focus{
+    color: white;
+}
+
+.fa.fa-shopping-cart{
+    color: white;
+}
+.fa.fa-shopping-cart:hover{
+    color: white;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

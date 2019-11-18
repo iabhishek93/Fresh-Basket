@@ -10,14 +10,16 @@
           <div *ngIf="name.errors.required">Name is required.</div>
         </div>
       </div>
+
       <div class="form-group">
         <label for="">Address</label>
-        <textarea #address="ngModel" name="address" [(ngModel)]="shipping.address" type="text" class="form-control"
+        <textarea required #address="ngModel" name="address" [(ngModel)]="shipping.address" class="form-control"
           placeholder="Address" cols="20" rows="5"></textarea>
         <div class="alert alert-danger" *ngIf="address.touched && address.invalid">
-          <div *ngIf="address.errors.required">Address is required.</div>
+          Address is required.
         </div>
       </div>
+
       <div class="form-group">
         <label for="">Landmark</label>
         <input #landmark="ngModel" name="secondAddress" [(ngModel)]="landmark.secondAddress" type="text"
@@ -26,6 +28,7 @@
           <div *ngIf="landmark.errors.required">Landmark is required.</div>
         </div>
       </div>
+
       <div class="form-group">
         <label for="">City</label>
         <input #city="ngModel" name="city" [(ngModel)]="shipping.city" type="text" placeholder="City"

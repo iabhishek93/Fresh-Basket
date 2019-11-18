@@ -23,7 +23,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private shoppingCart: ShoppingCartService) {
 
-
     productService.getProduct().pipe(
       switchMap(
         products => {
@@ -47,10 +46,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   async ngOnInit() {
     this.subscription = (await this.shoppingCart.getCart())
-      .subscribe(cart => this.cart = cart)
-    
-      this.subscription = (await this.shoppingCart.getCart())
-      .subscribe(cart => this.cart = cart)
+      .subscribe(cart => this.cart = cart);
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

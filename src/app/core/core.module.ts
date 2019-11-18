@@ -1,12 +1,13 @@
+import { CommonService } from './Services/common.service';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SharedModule } from './../shared/shared.module';
-import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   imports: [
@@ -15,13 +16,17 @@ import { LoginComponent } from './components/login/login.component';
     RouterModule.forChild([])
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
   ],
   declarations: [
     HeaderComponent,
     HomeComponent,
     LoginComponent,
-    FooterComponent,
-  ]
+    ModalComponent
+  ],
+  entryComponents: [
+    ModalComponent
+  ],
+  providers: [CommonService]
 })
 export class CoreModule { }

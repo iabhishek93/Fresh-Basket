@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #0984e3;">
   <div class="container">
-    <a class="navbar-brand" routerLink="/">
+    <a class="fresh navbar-brand" routerLink="/">
+      Fresh Basket
       <i class="fa fa-leaf"></i>
     </a>
     
@@ -25,7 +26,8 @@
       <ul class="navbar-nav">
           <ng-template #anonymousUser>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/login">Login</a>
+              <!-- <a class="nav-link" routerLink="/login" >Login</a> -->
+              <a class="nav-link cursor-pointer" (click)="open()" >Login</a>
             </li>
           </ng-template>
   

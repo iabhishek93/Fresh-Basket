@@ -1,17 +1,17 @@
-<div class="row" style="
+<div class="row pt-5 pt-md-0" style="
 min-height: 400px;
 ">
-  <div class="col-3">
+  <div class="col-3 d-none d-md-block">
     <!-- //Products List -->
     <product-filter [category]="category"></product-filter>
   </div>
 
   <!-- //Products View -->
-  <div class="col-9">
+  <div class="col-12 col-md-9 pt-5 pt-md-0">
     <div class="row" *ngIf="productsList.length; else showLoader">
 
       <ng-container *ngFor="let p of filteredProducts; let i=index">
-        <div class="col">
+        <div class="col-12 col-md-6">
           <product-card [product]="p" [shopping-cart]="cart"></product-card>
         </div>
         <div *ngIf="(i+1)%2 === 0" class="w-100"></div>

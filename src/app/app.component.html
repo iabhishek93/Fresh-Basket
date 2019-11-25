@@ -1,5 +1,16 @@
 <header></header>
 
-<div class="starter-template">
+<div class="container" (click)="closeNav()">
   <router-outlet></router-outlet>
+</div>
+
+<div id="mySidebar" class="sidebar" (click)="closeNav()">
+  <div *ngIf="appUser; else showLogin">
+    <a>{{ appUser.name }}</a>
+    <a routerLink="/my/orders">My Orders</a>
+    <a routerLink="" (click)="logout()"> Log Out</a>
+  </div>
+  <ng-template #showLogin>
+    <a routerLink="" (click)="login()"> Log In</a>
+  </ng-template>
 </div>

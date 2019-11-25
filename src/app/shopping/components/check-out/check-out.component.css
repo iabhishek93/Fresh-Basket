@@ -1,3 +1,33 @@
 .form-control.ng-touched.ng-invalid {
     border: 2px solid red;
 }
+
+@media (min-width: 768px) {
+    .order-col-form {
+        order: 1 !important;
+    }
+
+    .order-col-ship {
+        order: 2 !important;
+    }
+
+    .w-c-auto {
+        width: auto !important;
+    }
+
+    .border-bottom {
+        border-bottom: none !important;
+    }
+}
+
+.order-col-form {
+    order: 2;
+}
+
+.order-col-ship {
+    order: 1 ;
+}
+
+.w-c-auto {
+    width: 100%;
+}

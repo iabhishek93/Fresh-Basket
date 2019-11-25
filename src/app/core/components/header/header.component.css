@@ -1,36 +1,76 @@
-.dropdown-toggle{
+.dropdown-toggle {
     cursor: pointer;
 }
-.fa{
+
+.fa {
     margin-right: 4px;
 }
-.fresh{
+
+.fresh {
     margin-left: -19px;
     color: white;
 }
 
-.fa.fa-leaf{
-    color:#c1d62e
+.fa.fa-leaf {
+    color: #c1d62e
 }
 
 .navbar-light .navbar-nav .nav-link {
     color: #f8f9fa;
 }
-.fresh:hover{
+
+.navbar-toggler-icon{
+    background-image:url(http://fasignoms.com/wp-content/themes/twentyseventeen/img/menu_bar.png) !important;
+}
+
+.fresh:hover {
     color: white;
 }
 
-.fresh:focus{
+.fresh:focus {
     color: white;
 }
 
-.fa.fa-shopping-cart{
+.fa.fa-shopping-cart {
     color: white;
 }
-.fa.fa-shopping-cart:hover{
+
+.fa.fa-shopping-cart:hover {
     color: white;
 }
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .d-toggle {
+        display: none;
+    }
+
+    .filter-box {
+        display: none;
+    }
+}
+
+.fa-2 {
+    color:#fff;
+    font-size: 1.5rem;
+}
+
+.filter-pos{
+    transform: translate(-15px, 3px);
+}
+
+.filter-box {
+    min-width: 100px;
+}
+
+.filter-box .badge-pill{
+    color: #fff;
+}
+
+.badge-dark {
+    border: 1px solid #fff;
+    background: transparent;
 }

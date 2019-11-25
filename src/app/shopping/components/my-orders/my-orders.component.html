@@ -1,17 +1,19 @@
-<h1>My Orders</h1>
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th>Customer</th>
-            <th>Date</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let order of orders$ | async">
-            <td>{{order.shippingInfo.name}}</td>
-            <td>{{order.datePlaced|date}}</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+<div class="pt-5 mt-5 pt-md-0 mt-md-0">
+    <h1>My Orders</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Customer</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders$ | async">
+                <td>{{order.shippingInfo.name}}</td>
+                <td>{{order.datePlaced|date}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

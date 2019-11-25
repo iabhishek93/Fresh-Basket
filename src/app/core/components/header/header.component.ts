@@ -1,10 +1,11 @@
-import { Component,Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { AppUser } from 'shared/models/app-user';
 import { AuthService } from 'shared/Services/auth.service';
 import { ShoppingCartService } from 'shared/Services/shopping-cart.service';
 import { Observable } from 'rxjs';
 import { ShoppingCart } from 'shared/models/shopping-cart';
 import { CommonService } from './../../Services/common.service';
+import { CategoryService } from 'shared/Services/category.service';
 
 @Component({
   selector: 'header',
@@ -13,11 +14,15 @@ import { CommonService } from './../../Services/common.service';
 })
 export class HeaderComponent implements OnInit {
 
+  categories$;
+  toggleFilter = false;
   appUser: AppUser;
   //shoppingCartItemCount: number;
   cart$: Observable<ShoppingCart>;
+  toggleSideNav = false;
 
-  constructor(private comonService:CommonService,private authService: AuthService, private shoppingCartService: ShoppingCartService) {
+  constructor(private categoryService: CategoryService, private comonService: CommonService, private authService: AuthService, private shoppingCartService: ShoppingCartService) {
+    this.categories$ = categoryService.getCategories().snapshotChanges();
   }
 
   logout() {
@@ -32,8 +37,21 @@ export class HeaderComponent implements OnInit {
   }
 
   open() {
-   this.comonService.openModal('1');
+    this.comonService.openModal('1');
   }
 
+  toggleNavButton() {
+    this.toggleSideNav ? document.getElementById("mySidebar").style.width = "0" : document.getElementById("mySidebar").style.width = "250px";
+    this.toggleSideNav = !this.toggleSideNav;
+    this.toggleFilter = false;
+  }
+
+  toggleFilterData(){
+    this.toggleFilter=!this.toggleFilter;
+    if (this.toggleSideNav) {
+      this.toggleSideNav = false;
+      document.getElementById("mySidebar").style.width = "0" 
+    }
+  }
 }
 

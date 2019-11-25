@@ -1,6 +1,6 @@
-<h2>Shipping</h2>
-<div class="row">
-  <div class="col-6">
+<div class="row pt-5 pt-md-0">
+  <div class="col-12 col-md-6 order-col-form">
+    <h2 class="py-4 py-md-0">Shipping</h2>
     <form #f="ngForm">
       <div class="form-group">
         <label for="">Name</label>
@@ -37,10 +37,12 @@
           <div *ngIf="city.errors.required">City is required.</div>
         </div>
       </div>
-      <button [disabled]="!f.valid" (click)="placeOrder()" class="btn btn-primary">Place Order</button>
+      <div class="pb-5 pb-md-0">
+        <button [disabled]="!f.valid" (click)="placeOrder()" class="btn btn-primary w-c-auto">Place Order</button>
+      </div>
     </form>
   </div>
-  <div class="col-6">
+  <div class="col-12 col-md-6 order-col-ship border-bottom">
     <shopping-cart-summary [cart]="cart"></shopping-cart-summary>
   </div>
 </div>

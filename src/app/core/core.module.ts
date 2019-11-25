@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { ModalComponent } from './components/modal/modal.component';
     HeaderComponent,
     HomeComponent,
     LoginComponent,
-    ModalComponent
+    ModalComponent,
+    NotfoundComponent
   ],
   entryComponents: [
     ModalComponent

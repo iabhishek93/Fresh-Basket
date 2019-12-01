@@ -40,6 +40,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
         this.filteredProducts = (this.category) ?
           this.productsList.filter(p => p.category === this.category) :
           this.productsList;
+        document.getElementById('products-cart').scrollIntoView({ behavior: "smooth", block: "start", inline: "start" })
       });
 
   }

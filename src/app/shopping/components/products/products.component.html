@@ -7,7 +7,7 @@ min-height: 400px;
   </div>
 
   <!-- //Products View -->
-  <div class="col-12 col-md-9 pt-5 pt-md-0">
+  <div class="col-12 col-md-9 pt-5 pt-md-0" id="products-cart">
     <div class="row" *ngIf="productsList.length; else showLoader">
 
       <ng-container *ngFor="let p of filteredProducts; let i=index">

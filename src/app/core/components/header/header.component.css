@@ -58,10 +58,6 @@
     font-size: 1.5rem;
 }
 
-.filter-pos{
-    transform: translate(-15px, 3px);
-}
-
 .filter-box {
     min-width: 100px;
 }
@@ -73,4 +69,16 @@
 .badge-dark {
     border: 1px solid #fff;
     background: transparent;
+}
+
+.cart-box {
+    transform: translateY(3px);
+}
+
+.item-badge {
+    transform: translate(-13px, -13px);
+}
+
+.navbar-light .navbar-toggler {
+    border-color: transparent;
 }

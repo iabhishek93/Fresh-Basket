@@ -1,12 +1,20 @@
 <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #0984e3;">
   <div class="container">
-    <a class="fresh navbar-brand pl-4" routerLink="/">
+    <a class="fresh navbar-brand pl-4" routerLink="/" (click)="toggleFilter = false">
       Fresh Basket
       <i class="fa fa-leaf"></i>
     </a>
     <div>
-      <a class="d-toggle pt-2" (click)="toggleFilterData()">
-        <i class="fa fa-filter fa-2 filter-pos" aria-hidden="true"></i>
+      <button type="button" class="btn btn-link d-toggle mr-2" (click)="toggleFilterData()">
+          <i class="fa fa-filter fa-2" aria-hidden="true"></i>
+      </button>
+      <a class="d-toggle pt-2" routerLink="/shopping-cart">
+        <div class="d-inline-block">
+          <i class="fa fa-shopping-cart fa-2 cart-box" aria-hidden="true"></i>
+          <span class="badge badge-warning badge-pill item-badge" *ngIf="cart$ | async as cart">
+            {{ cart.totalItemsCount }}
+          </span>
+        </div>
       </a>
       <button (click)="toggleNavButton()" class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
@@ -19,9 +27,8 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/shopping-cart">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-
-            <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
+            <i class="fa fa-shopping-cart fa-2 cart-box" aria-hidden="true"></i>
+            <span class="badge badge-warning badge-pill item-badge" *ngIf="cart$ | async as cart">
               {{ cart.totalItemsCount }}
             </span>
           </a>
@@ -52,10 +59,11 @@
       </ul>
     </div>
   </div>
-  <div class="row filter-box" *ngIf="categories$ && toggleFilter">
-    <div class="col-3 text-center" *ngFor="let category of categories$ | async" routerLink="/" [queryParams]="{category:category.key}" (click)="activeFilter = category.key;toggleFilter = false">
+  <div class="row filter-box" id="filter" [hidden]="!categories$ || !toggleFilter">
+    <div class="col-3 text-center" *ngFor="let category of categories$ | async" routerLink="/"
+      [queryParams]="{category:category.key}" (click)="activeFilter = category.key;toggleFilter = false">
       <span class="badge badge-pill" [ngClass]="{'badge-dark': activeFilter === category.key}">
-          {{category.payload.val().name}}
+        {{category.payload.val().name}}
       </span>
     </div>
   </div>

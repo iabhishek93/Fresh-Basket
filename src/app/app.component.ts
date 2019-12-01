@@ -11,9 +11,10 @@ import { AppUser } from '../app/shared/models/app-user';
 })
 export class AppComponent {
   appUser = {} as AppUser;
+  toggleCount = 0;
 
   constructor(private userService: UserService, private authService: AuthService, router: Router) {
-   
+
     authService.user.subscribe(user => {
       if (!user) return;
       // if(user){
@@ -22,7 +23,7 @@ export class AppComponent {
       let returnUrl = localStorage.getItem('returnUrl');
 
       if (!returnUrl) return;
- 
+
       // if(returnUrl){
       localStorage.removeItem('returnUrl');
       router.navigateByUrl(returnUrl);
@@ -36,7 +37,9 @@ export class AppComponent {
   }
 
   closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
+    this.toggleCount++;
+    // document.getElementById("mySidebar").style.width = "0";
+    // document.getElementById("filter").style.display = "none";
   }
 
   login() {

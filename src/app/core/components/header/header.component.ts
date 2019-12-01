@@ -14,6 +14,14 @@ import { CategoryService } from 'shared/Services/category.service';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input('hide-content')
+  set content(value: number) {
+    this.toggleFilter = false;
+    this.toggleFilterData();
+    this.toggleSideNav = true;
+    this.toggleNavButton();
+  }
+
   categories$;
   toggleFilter = false;
   appUser: AppUser;
